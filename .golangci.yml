@@ -1,0 +1,81 @@
+run:
+  tests: true
+
+linters:
+  enable:
+    - asasalint
+    - asciicheck
+    - bidichk
+    - bodyclose
+    - dogsled
+    - dupl
+    - durationcheck
+    - errcheck
+    - errname
+    - exportloopref
+    - forbidigo
+    - gci
+    - gocritic
+    - godox
+    - gofmt
+    - gofumpt
+    - goimports
+    - gomoddirectives
+    - gosec
+    - gosimple
+    - govet
+    - grouper
+    - importas
+    - ineffassign
+    - misspell
+    - nakedret
+    - nilerr
+    - nilnil
+    - noctx
+    - nolintlint
+    - nonamedreturns
+    - nosprintfhostport
+    - prealloc
+    - predeclared
+    - revive
+    - staticcheck
+    - stylecheck
+    - tenv
+    - thelper
+    - tparallel
+    - typecheck
+    - unconvert
+    - unparam
+    - unused
+    - usestdlibvars
+    - whitespace
+  disable:
+    - wastedassign # No generics support
+
+issues:
+  max-same-issues: 0
+  max-issues-per-linter: 0
+
+linters-settings:
+  forbidigo:
+    forbid:
+      - ^spew\.Dump
+  gocritic:
+    enabled-tags:
+      - diagnostic
+      - performance
+      # TODO try the other tags
+#    disabled-checks:
+#      - ifElseChain
+#      - hugeParam
+#      - equalFold
+#      - rangeValCopy
+  gofumpt:
+    extra-rules: true
+  grouper:
+    import-require-single-import: true
+  prealloc:
+    simple: false
+    for-loops: true
+  predeclared:
+    q: true
